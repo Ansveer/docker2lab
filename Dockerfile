@@ -28,8 +28,7 @@ COPY app/ ./app/
 RUN adduser -D user && \
     chown -R user:user /app
 	
-ENV PATH="/opt/venv/bin:$PATH" \
-    PYTHONPATH="/app"
+ENV PATH="/opt/venv/bin:$PATH"
 
 USER user
 
