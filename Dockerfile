@@ -30,7 +30,11 @@ RUN adduser -D user && \
 	
 ENV PATH="/opt/venv/bin:$PATH"
 
+RUN whoami && id
+
 USER user
+
+RUN whoami && id
 
 HEALTHCHECK --interval=5s --timeout=5s --retries=3 \
     CMD curl -f http://localhost:8000/health || exit 1
